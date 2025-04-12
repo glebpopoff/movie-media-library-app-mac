@@ -309,7 +309,7 @@ class MovieLibrary(tk.Tk):
                             self.log_debug(f"Movie page response status: {response.status_code}")
                             
                             # Save movie page for debugging
-                            debug_file = f"imdb_movie_{movie_name}.html"
+                            debug_file = os.path.join('tmp', f"imdb_movie_{movie_name}.html")
                             with open(debug_file, 'w', encoding='utf-8') as f:
                                 f.write(response.text)
                             self.log_debug(f"Saved movie page to {debug_file}")
